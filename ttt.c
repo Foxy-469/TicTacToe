@@ -6,15 +6,39 @@ int input(char r1[4], char r2[4], char r3[4], char a) {
     scanf("%d", &i);
     if (i == 1 || i == 2 || i == 3) {
         i--;
-        r1[i] = a;
+        if (r1[i] != 'X' &&  r1[i] != 'O'){
+            r1[i] = a;
+        }
+        else{
+            printf("Wrong input\n");
+            printf("Enter number: ");
+            input(r1, r2, r3, a);
+        }
     } else if (i == 4 || i == 5 || i == 6) {
         i = i - 4;
-        r2[i] = a;
+        if (r2[i] != 'X' && r2[i] != 'O'){
+            r2[i] = a;
+        }
+        else{
+            printf("Wrong input\n");
+            printf("Enter number: ");
+            input(r1, r2, r3, a);
+        }
+
     } else if (i == 7 || i == 8 || i == 9) {
         i = i - 7;
-        r3[i] = a;
-    } else {
+        if (r3[i] != 'X' && r3[i] != 'O'){
+            r3[i] = a;
+        }
+        else{
+            printf("Wrong input\n");
+            printf("Enter number: ");
+            input(r1, r2, r3, a);
+        }
+   } else {
         printf("Wrong input\n");
+        printf("Enter number: ");
+        input(r1, r2, r3, a);
     }
 }
 
